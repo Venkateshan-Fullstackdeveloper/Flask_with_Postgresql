@@ -1,0 +1,26 @@
+{% extends 'home.html'%}
+{% block head%}
+    <title>Login</title>
+{% endblock %}
+{% block body%}
+    <center>
+        <h1>Login</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages: %}
+        <p>{{messages}}</p>
+        {% endif %}
+        {% endwith%}
+        <form method="POST" action="">
+            <br>
+            <input type="text" name="username" id="" placeholder="username" required>
+            <br><br>
+            <input type="password" name="password" id="" placeholder="password" required>
+            <br><br>
+            <a href="{{url_for('signup')}}" class="danger">if you dont have an account?</a>
+            <br><br>
+            <input type="submit" value="Login">
+            <br>
+        </form>
+
+    </center>
+    {% endblock%}
